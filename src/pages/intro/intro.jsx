@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom"
 const Intro = () => {
     const difficulty = ["easy", "medium", "hard"]
     const [difficultyChange, setDifficultyChange] = useState("")
-    const TOTAL_QUESTIONS = 10
     const navigate= useNavigate()
+    const TOTAL_QUESTIONS = 10
+
+    console.log(difficultyChange, "difficultyChange")
     const startQuiz = () => {
         if(difficultyChange){
             navigate(`/quiz/${difficultyChange}/${TOTAL_QUESTIONS}`)

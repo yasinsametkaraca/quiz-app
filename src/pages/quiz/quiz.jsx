@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import * as api from "../../api/api"
 import "./quiz.css"
 import QuestionCard from "../../components/questionCard/questionCard";
+import Modal from "../../components/modal/modal";
 
 const Quiz = () => {
     const url = window.location.pathname.split('/');
@@ -24,16 +25,20 @@ const Quiz = () => {
     console.log(questionsData, "questionsData")
   return (
     <div className="quiz">
+        {
+            modal ? <Modal score={score}/>:
+                <QuestionCard
+                    questionsData={questionsData}
+                    score={score}
+                    setScore={setScore}
+                    count={count}
+                    setCount={setCount}
+                    modal={modal}
+                    setModal={setModal}
+                />
+        }
 
-        <QuestionCard
-          questionsData={questionsData}
-          score={score}
-          setScore={setScore}
-          count={count}
-          setCount={setCount}
-          modal={modal}
-          setModal={setModal}
-        />
+
 
     </div>
   )
