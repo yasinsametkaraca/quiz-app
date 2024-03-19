@@ -5,8 +5,10 @@ import "./quiz.css"
 import QuestionCard from "../../components/questionCard/questionCard";
 
 const Quiz = () => {
-    const {difficulty,amount} = useParams()
-    const {questionsData, setQuestionsData} = useState([])
+    const url = window.location.pathname.split('/');
+    const difficulty = url[2];
+    const amount = url[3];
+    const [questionsData, setQuestionsData] = useState([])
     const [score,setScore] = useState(0)
     const [count,setCount] = useState(0)
     const [modal,setModal] = useState(false)
