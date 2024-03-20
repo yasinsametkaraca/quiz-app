@@ -1,15 +1,18 @@
 import React from "react"
 import "./dropdown.css"
 
-const Dropdown = ({data,setDifficultyChange}) => {
+const Dropdown = ({data,setChange,placeholder}) => {
   return (
-    <div className="dropdown">
-      <select className="dropdown-select" onChange={e=> setDifficultyChange(e.target.value)} name="" id="">
-        {data.map((dt,i) => (
-          <option value={dt} key={i}>{dt}</option>
-        ))}
-      </select>
-    </div>
+      <div className="dropdown">
+          <select className="dropdown-select" onChange={(e) => setChange(e.target.value)}>
+              <option>{placeholder}</option>
+              {data.map((dt) => (
+                  <option value={dt} key={dt}>
+                      {dt}
+                  </option>
+              ))}
+          </select>
+      </div>
   )
 }
 

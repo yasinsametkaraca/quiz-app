@@ -1,4 +1,6 @@
-.dropdown{}
+.dropdown{
+    margin: 3px;
+}
 .dropdown-select{
     width: 350px;
     height: 50px;
